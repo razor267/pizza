@@ -1,11 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './scss/app.scss';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './scss/app.scss'
+import App from './App'
+import {BrowserRouter as Router} from 'react-router-dom'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function StartApp() {
+    return (
+        <Router>
+            <App/>
+        </Router>
+    )
+}
+
+const container = document.getElementById('root') as HTMLDivElement
+const root = ReactDOM.createRoot(container)
+root.render(<StartApp/>)
